@@ -69,7 +69,7 @@ export default class AddACarMakeChoose extends React.Component {
     _this.state = {
       bookList: bookList,
       products: [],
-      purchaseStatus: [true, false, false, false, false, false],
+      purchaseStatus: [true, true, true, true, true, true],
     };
     this.purchaseUpdateSubscription = null;
     this.purchaseErrorSubscription = null;
@@ -145,7 +145,7 @@ export default class AddACarMakeChoose extends React.Component {
               _this.setState({purchaseStatus: _purchaseStatus});
               break;
             case 'com.evetterose.metaphysical.item4':
-              index = 4;
+              index = 5;
               _purchaseStatus[index] = true;
               _this.setState({purchaseStatus: _purchaseStatus});
               break;

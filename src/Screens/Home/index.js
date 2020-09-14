@@ -91,25 +91,23 @@ export default class AddACarMakeChoose extends React.Component {
         });
       });
 
-    // try {
-    //   const value = await AsyncStorage.getItem('IAP_Status');
-    //   console.log('getitem', value);
+     try {
+       const value = await AsyncStorage.getItem('IAP_Status');
+       console.log('getitem', value);
+     } catch (error) {
+       // Error retrieving data
+       _this.setState({
+         purchaseStatus: [true, false, false, false, false, false],
+       });
+     }
 
-    // } catch (error) {
-    //   // Error retrieving data
-    //   _this.setState({
-    //     purchaseStatus: [true, false, false, false, false, false],
-    //   });
-    // }
-
-    // try {
-    //   const products: Product[] = await RNIap.getProducts(itemSkus);
-    //   console.log('products11', products);
-
-    //   _this.setState({products});
-    // } catch (err) {
-    //   console.warn(err); // standardized err.code and err.message available
-    // }
+     try {
+       const products: Product[] = await RNIap.getProducts(itemSkus);
+       console.log('products11', products);
+       _this.setState({products});
+     } catch (err) {
+       console.warn(err); // standardized err.code and err.message available
+     }
 
     RNIap.initConnection().then(() => {
       RNIap.getProducts(itemSkus).then((products) => {
@@ -145,7 +143,7 @@ export default class AddACarMakeChoose extends React.Component {
               _this.setState({purchaseStatus: _purchaseStatus});
               break;
             case 'com.evetterose.metaphysical.item4':
-              index = 5;
+              index = 4;
               _purchaseStatus[index] = true;
               _this.setState({purchaseStatus: _purchaseStatus});
               break;

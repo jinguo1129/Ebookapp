@@ -4,12 +4,12 @@ import colors from './colors';
 export default StyleSheet.create({
   viewConinater: {
     flex: 1,
-    // backgroundColor: '#888888',
-    // backgroundColor: 'black',
+    backgroundColor: '#888888',
+    backgroundColor: 'black',
   },
   containerView: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: '#EEE',
   },
   headerContainer: {
     borderBottomWidth: 0,
